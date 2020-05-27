@@ -1,0 +1,10 @@
+![image-20200527164145099](C:\Users\x1850\AppData\Roaming\Typora\typora-user-images\image-20200527164145099.png)
+
+一个tomcat就是一个server实例，里面包含n个service容器
+
+service容器包含n个连接器connector和一个servlet容器，n个连接器被绑定到这个servlet容器中
+
+一个connector包含endPoint、processor、adapter等组件；endPoint处理与客户端的交互，处理socket连接；processor负责处理与协议相关的内容，将socket二进制流与request/response进行转换；adapter则是适配器模式的体现，将tomcat的request和response转换为servlet的request和response
+
+一个servlet容器包含一个engine引擎，engine引擎持有多个host属性，一个host虚拟主机中可部署多个web应用context，一个context包含多个wrapper，一个wrapper则对应一个servlet
+
